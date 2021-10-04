@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Infrastructure.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Infrastructure.Data.Context
     {
 
         public Contexto(DbContextOptions<Contexto> options)
-            : base(options)
+            :base(options)
         {
 
         }
@@ -24,7 +25,9 @@ namespace Infrastructure.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Cliente>(
-                new ClienteMap().Configure);        }
+                new ClienteMap().Configure);
+        }
+
 
     }
 }

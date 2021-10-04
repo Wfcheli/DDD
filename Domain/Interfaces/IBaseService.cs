@@ -11,7 +11,6 @@ namespace Domain.Interfaces
     public interface IBaseService<TEntity>
         where TEntity : BaseEntity
     {
-
         void Inserir<TValidator>(TEntity obj)
             where TValidator : AbstractValidator<TEntity>;
 
@@ -19,7 +18,10 @@ namespace Domain.Interfaces
             where TValidator : AbstractValidator<TEntity>;
 
         IList<TEntity> Listar();
+
         TEntity ListarPorId(int id);
+
         void Excluir(int id);
+
     }
 }
